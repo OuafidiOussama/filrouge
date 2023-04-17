@@ -1,0 +1,11 @@
+
+.scrollbar-none::-webkit-scrollbar{
+    display: none;
+}
+.bg{
+    height: 100%;
+    background-image: url('../images/mainbg.png');
+    background-repeat: no-repeat;
+    filter: contrast(1.25);
+    background-position: center;
+}
