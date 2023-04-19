@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Admin;
+use App\Models\Cart;
 use App\Models\User;
+use App\Models\Admin;
+use App\Models\Product;
+use App\Models\Category;
 
 
 class Pages extends Controller
@@ -12,6 +15,7 @@ class Pages extends Controller
         $data =[
             'LoggedUser' => User::where('id', '=', session('LoggedUser'))->first(),
             'LoggedAdm' => Admin::where('id', '=', session('LoggedAdm'))->first(),
+            'nbr' => Cart::count(),
             'title' => 'FLAMENGNAWA'
         ];
         return view('pages.home', $data);
@@ -21,16 +25,21 @@ class Pages extends Controller
         $data = [
             'LoggedUser' => User::where('id','=', session('LoggedUser'))->first(),
             'LoggedAdm' => Admin::where('id', '=', session('LoggedAdm'))->first(),
+            'products' => Product::all(),
+            'categories' => Category::all(),
+            'nbr' => Cart::count(),
             'title' => 'SHOP'
         ];
         return view('pages.shop', $data);
     }
 
-    public function product(){
+    public function product($id){
         $data = [
             'LoggedAdm' => Admin::where('id', '=', session('LoggedAdm'))->first(),
             'LoggedUser' => User::where('id','=', session('LoggedUser'))->first(),
-            'title' => 'SHOP'
+            'product' => Product::find($id),
+            'nbr' => Cart::count(),
+            'title' => Product::find($id)->product_name
         ];
         return view('pages.product', $data);
     }
@@ -39,6 +48,7 @@ class Pages extends Controller
         $data = [
             'LoggedAdm' => Admin::where('id', '=', session('LoggedAdm'))->first(),
             'LoggedUser' => User::where('id','=', session('LoggedUser'))->first(),
+            'nbr' => Cart::count(),
             'title' => 'EVENTS'
         ];
         return view('pages.events', $data);
@@ -48,6 +58,7 @@ class Pages extends Controller
         $data = [
             'LoggedAdm' => Admin::where('id', '=', session('LoggedAdm'))->first(),
             'LoggedUser' => User::where('id','=', session('LoggedUser'))->first(),
+            'nbr' => Cart::count(),
             'title' => 'HIRE US'
         ];
         return view('pages.hireus', $data);
@@ -57,6 +68,7 @@ class Pages extends Controller
         $data = [
             'LoggedAdm' => Admin::where('id', '=', session('LoggedAdm'))->first(),
             'LoggedUser' => User::where('id','=', session('LoggedUser'))->first(),
+            'nbr' => Cart::count(),
             'title' => 'PROFIL'
         ];
         return view('pages.profil', $data);

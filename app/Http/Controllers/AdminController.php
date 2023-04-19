@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Admin;
+use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -47,7 +50,11 @@ class AdminController extends Controller
         $data = [
             'title' => 'Dashboard',
             'LoggedAdm' => Admin::where('id', '=', session('LoggedAdm'))->first(),
+            'cat_count' => Category::count(),
+            'pro_count' => Product::count(),
+            'user_count' => User::count(),
         ];
         return view('admin.dash', $data);
     }
+
 }

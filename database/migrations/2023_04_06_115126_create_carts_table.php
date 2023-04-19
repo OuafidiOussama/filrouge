@@ -16,8 +16,6 @@ return new class extends Migration
             $table->string('product_name');
             $table->float('product_price');
             $table->string('product_img');
-            $table->integer('qty');
-            $table->float('total_price');
             $table->integer('product_id');
             $table->integer('user_id');
             $table->timestamps();

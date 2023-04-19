@@ -8,19 +8,25 @@
     </div>
     
     <ul class="flex flex-col gap-3 pt-4">
-        <a href="">
+        <a href="/admin/dash">
             <li class="py-2 px-5 font-semibold text-white hover:text-black hover:bg-white transition-all">
                 <i class="fa-solid fa-chart-area pr-1 text-xl "></i>
                 Dashboard
             </li>
         </a>
-        <a href="">
+        <a href="/admin/products">
             <li class="py-2 px-5 font-semibold text-white hover:text-black hover:bg-white transition-all">
                 <i class="fa-brands fa-product-hunt pr-1 text-xl "></i>
                 Poducts
             </li>
         </a>
-        <a href="">
+        <a href="/admin/categories">
+            <li class="py-2 px-5 font-semibold text-white hover:text-black hover:bg-white transition-all">
+                <i class="fa-solid fa-chart-pie pr-1 text-xl "></i>
+                Categories
+            </li>
+        </a>
+        <a href="/admin/events">
             <li class="py-2 px-5 font-semibold text-white hover:text-black hover:bg-white transition-all">
                 <i class="fa-solid fa-calendar-days pr-1 text-xl "></i>
                 Events

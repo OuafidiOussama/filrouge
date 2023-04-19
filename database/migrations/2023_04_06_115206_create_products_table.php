@@ -16,9 +16,12 @@ return new class extends Migration
             $table->string('product_img');
             $table->string('product_name');
             $table->integer('product_price');
-            $table->string('brand');
-            $table->string('body_material');
-            $table->string('color');
+            $table->string('brand')->nullable();
+            $table->string('body_material')->nullable();
+            $table->string('color')->nullable();
+            $table->longText('description')->nullable();
+            $table->integer('qty');
+            $table->integer('category_id');
             $table->timestamps();
         });
     }
