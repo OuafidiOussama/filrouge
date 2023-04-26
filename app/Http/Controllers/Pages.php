@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\User;
 use App\Models\Admin;
+use App\Models\Event;
 use App\Models\Product;
 use App\Models\Category;
 
@@ -25,7 +26,7 @@ class Pages extends Controller
         $data = [
             'LoggedUser' => User::where('id','=', session('LoggedUser'))->first(),
             'LoggedAdm' => Admin::where('id', '=', session('LoggedAdm'))->first(),
-            'products' => Product::all(),
+            'products' => Product::paginate(9),
             'categories' => Category::all(),
             'nbr' => Cart::count(),
             'title' => 'SHOP'
@@ -49,6 +50,7 @@ class Pages extends Controller
             'LoggedAdm' => Admin::where('id', '=', session('LoggedAdm'))->first(),
             'LoggedUser' => User::where('id','=', session('LoggedUser'))->first(),
             'nbr' => Cart::count(),
+            'events' => Event::all(),
             'title' => 'EVENTS'
         ];
         return view('pages.events', $data);

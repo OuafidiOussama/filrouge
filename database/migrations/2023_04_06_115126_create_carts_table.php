@@ -18,6 +18,10 @@ return new class extends Migration
             $table->string('product_img');
             $table->integer('product_id');
             $table->integer('user_id');
+            $table->integer('ordered_qty')->nullable();
+            $table->integer('product_total')->nullable();
+            $table->integer('sub_total')->nullable();
+            $table->integer('grand_total')->nullable();
             $table->timestamps();
         });
     }

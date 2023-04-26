@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
@@ -35,7 +36,10 @@ Route::get('/profil',[Pages::class, 'profil']);
 
 Route::get('/cart',[CartController::class, 'cart']);
 Route::post('/addToCart',[CartController::class, 'addToCart']);
-Route::delete('/deleteFromCart/{item}',[CartController::class, 'deleteFromCart']);
+Route::get('/updateCart',[CartController::class, 'updateCart']);
+Route::get('/deleteFromCart/{item}',[CartController::class, 'deleteFromCart'])->name('deleteFromCart');
+Route::post('/checkout',[OrderController::class, 'checkOut']);
+
 
 Route::get('/login',[UserController::class, 'login']);
 Route::get('/logout',[UserController::class, 'logout']);
@@ -69,4 +73,10 @@ Route::delete('/deleteCategory/{category}',[CategoryController::class, 'deleteCa
 
 
 
+Route::get('/bookEvent/{event}',[EventController::class, 'bookEvent']);
 Route::get('/admin/events',[EventController::class, 'events']);
+Route::get('/admin/addEvent',[EventController::class, 'addEvent']);
+Route::post('/saveEvent',[EventController::class, 'saveEvent']);
+Route::get('/admin/editEvent/{event}',[EventController::class, 'editEvent']);
+Route::put('/updateEvent/{event}',[EventController::class, 'updateEvent']);
+Route::delete('/deleteEvent/{event}',[EventController::class, 'deleteEvent']);

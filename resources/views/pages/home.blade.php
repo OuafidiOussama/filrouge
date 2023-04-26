@@ -40,7 +40,7 @@
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab eligendi exercitationem velit pariatur voluptatem sequi similique, maxime sapiente ipsam facilis debitis saepe illum ex temporibus! Ratione assumenda libero facilis ducimus.
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima quaerat iusto excepturi quam ab cum debitis harum facere. Tempore temporibus dicta neque nam similique. Quidem, porro! Cupiditate quas unde aliquid!</p>
     
-                <span class="px-5 relative right-5"><button class="rounded-full bg-black text-white w-[200px] px-5 py-2 hover:text-black hover:bg-gray-300 transition-all hover:shadow-2xl hover:shadow-black">Read More</button></span>
+                <span class="px-5 relative right-5"><a href="events"><button class="rounded-full bg-black text-white w-[200px] px-5 py-2 hover:text-black hover:bg-gray-300 transition-all hover:shadow-2xl hover:shadow-black">Read More</button></a></span>
         </div>
         <div class="h-full absolute top-0 left-1/2 w-1/2 pr-20 flex flex-col justify-center">
             <img src="{{asset ('images/99.JPEG')}}" alt="" class="w-[540px] h-[540px] object-cover">
