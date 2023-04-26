@@ -38,6 +38,7 @@
         <h1 class="text-4xl font-extrabold pb-5 text-red-600">${{$product->product_price}}</h1>
         <p class="text-md pb-10">No fees and shipping free of charge</p>
         <div class="w-full flex flex-col gap-3 pb-10">
+        @if(Session('LoggedUser'))
             @if($product->qty == 0)
             <span class="text-center"><button class="rounded-full bg-gray-600 hover:bg-gray-800 text-white w-full px-5 py-2 cursor-not-allowed" disabled>ADD TO CART</button></span>
             <span class="text-center"><button class="rounded-full bg-gray-600 hover:bg-gray-800 text-white w-full px-5 py-2 cursor-not-allowed" disabled>BUY NOW</button></span>
@@ -45,6 +46,7 @@
             <span class="text-center"><button class="rounded-full bg-red-600 hover:bg-red-800 text-white w-full px-5 py-2">ADD TO CART</button></span>
             <span class="text-center"><button class="rounded-full bg-red-600 hover:bg-red-800 text-white w-full px-5 py-2">BUY NOW</button></span>
             @endif
+        @endif
         </div>
         <p class="text-xl font-semibold pb-5">Category :
             <span class=" text-xl font-semibold hover:underline">{{$product->category->category_name}}</span>

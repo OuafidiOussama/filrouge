@@ -12,12 +12,14 @@
             <div class="pt-3 text-center group">
                 <h2 class="text-xl font-semibold">{{$product->product_name}}</h2>
                 <p class="pb-3">Price: ${{$product->product_price}}</p>
-                <span class="px-5 invisible group-hover:visible"><button class="rounded-full bg-red-600 hover:bg-red-800 text-white w-[200px] px-5 py-2">Add To Cart</button></span>
+                <span class="px-5 invisible group-hover:visible"><button class="rounded-full bg-red-600 hover:bg-red-800 text-white w-[200px] px-5 py-2">View More</button></span>
             </div>
         </div>
         @endforeach
     </section>
     
-    <x-categories :categories="$categories"/>
+    <x-categories :categories="$categories" :products="$products"/>
+
+    
 </div>
 @endsection
